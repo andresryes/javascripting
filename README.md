@@ -39,3 +39,11 @@
 # Examples
 
 Follow every `.js` file in the a-z0-9 order to keep moving.
+
+# Running docker image
+docker build --rm -f "dockerfile" -t javascripting:latest .
+docker run -it javascripting:latest sh
+
+# Running using start.sh
+chmod +x start.sh
+sudo ./start.sh
