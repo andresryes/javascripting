@@ -6,9 +6,7 @@
 npm install --global javascripting
 
 
-
 npm install -g learnyounode
-
 
 
 npm install -g async-you
