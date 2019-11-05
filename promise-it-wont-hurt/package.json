@@ -1,0 +1,25 @@
+{
+  "name": "jaz-nodeschool-promise-it-wont-hurt",
+  "version": "1.0.0",
+  "description": "NodeSchool Solutions by Jaz for promise-it-wont-hurt workshopper",
+  "main": "index.js",
+  "dependencies": {
+    "es6-promise": "^3.3.1",
+    "promise-it-wont-hurt": "^1.0.0-alpha.2",
+    "q-io": "^1.13.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazeee/nodeschool-promise-it-wont-hurt.git"
+  },
+  "author": "Jaz Singh",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jazeee/nodeschool-promise-it-wont-hurt/issues"
+  },
+  "homepage": "https://github.com/jazeee/nodeschool-promise-it-wont-hurt#readme"
+}
