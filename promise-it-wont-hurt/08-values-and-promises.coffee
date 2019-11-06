@@ -1,9 +1,8 @@
-require('es6-promise')
-
-attachTitle = (name) -> "DR. #{name}"
-
-promise = Promise.resolve "MANHATTAN"
-
-promise
-	.then attachTitle
-	.then console.log
+function attachTitle(string) {
+  return 'DR. ' + string
+}
+var promise = new Promise(function(resolve,reject) {
+  resolve('MANHATTAN')
+})
+.then(attachTitle)
+.then(console.log)

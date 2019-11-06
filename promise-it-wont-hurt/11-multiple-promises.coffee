@@ -1,22 +1,58 @@
-require('es6-promise')
+// function all(func, func2) {
+//   return new Promise (function (resolve, reject) {
+//     return resolve([func(), func2()])
+//   })
+// }
 
-all = (promise1, promise2) ->
-	resolveCount = 0
-	results = []
-	promise = new Promise (fulfill, reject)->
-		markAsResolved = (index, result)->
-			resolveCount++
-			results[index] = result
-			if resolveCount == 2
-				fulfill(results)
+function all(promise1, promise2) {
+  var result = []
+  return new Promise(function(resolve, reject) {
+    return promise1.then(function(response) {
+  
+      result.push(response)
+      return promise2.then(function(response) {
 
-		promise1.then (result) ->
-			markAsResolved 0, result
-		promise2.then (result) ->
-			markAsResolved 1, result
+        result.push(response)
+        resolve(result)
+      })
+    })
+  })
 
-	promise
+}
+
 
 all(getPromise1(), getPromise2())
-	.then console.log
-	.catch console.error
+.then(function(response) {
+  console.log(response)
+})
+
+
+// getPromise1().then(console.log)
+//
+
+// function all(promise1, promise2) {
+//   var counter = 0
+//   var results = []
+//
+//   return new Promise(function (resolve, reject) {
+//     promise1.then(function (result) {
+//       console.log('inside promise1')
+//       results.push(result)
+//       counter++
+//     })
+//
+//     promise2.then(function (result) {
+//       console.log('inside promise2')
+//       results.push(result)
+//       counter++
+//     })
+//
+//     while (true) {
+//       if (counter === 2) {
+//         console.log('here');
+//         resolve(results)
+//         break
+//       }
+//     }
+//   })
+// }

@@ -1,7 +1,5 @@
-require('es6-promise')
-
-promise = new Promise (fulfill, reject) ->
-	fulfill 'PROMISE VALUE'
-
-promise.then(console.log)
-console.log "MAIN PROGRAM"
+var promise = new Promise(function(resolve,reject) {
+  resolve('PROMISE VALUE')
+})
+.then(console.log)
+console.log('MAIN PROGRAM');

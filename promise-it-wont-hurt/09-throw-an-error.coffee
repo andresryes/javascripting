@@ -1,12 +1,14 @@
-require('es6-promise')
+function parsedPromised(json) {
+  return new Promise(function(resolve, reject) {
+    try {
+      resolve(JSON.parse(json))
+    }
+    catch(error) {
+      reject(error)
+    }
+  })
+}
 
-parsePromised = (json)->
-	return new Promise (fulfill, reject) ->
-		try
-			fulfill JSON.parse json
-		catch error
-			reject error
-
-parsePromised process.argv[2]
-	.then console.log
-	.catch console.log
+parsedPromised(process.argv[2])
+.then(console.log)
+.catch(console.log(error.message))

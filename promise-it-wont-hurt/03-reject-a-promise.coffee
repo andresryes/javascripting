@@ -1,11 +1,11 @@
-require('es6-promise')
-
-promise = new Promise (fulfill, reject) =>
-	setTimeout =>
-		reject new Error 'REJECTED!'
-	, 300
-
-onReject = (error) =>
-	console.log error.message
-
-promise.then(console.log, onReject)
+var promise = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    reject(Error('REJECTED!'))
+  }, 300)
+})
+.then(undefined, function(error) {
+  onReject(error)
+})
+function onReject(error) {
+  console.log(error.message);
+}

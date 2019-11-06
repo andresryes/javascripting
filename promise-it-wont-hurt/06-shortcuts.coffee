@@ -1,11 +1,8 @@
-require('es6-promise')
+var promise = Promise.reject(new Error('error'))
 
-promise = new Promise (fulfill, reject) ->
-	fulfill 'I FIRED'
-	reject new Error 'I DID NOT FIRE'
-
-onReject = (error) ->
-	console.log error.message
-
-promise.then(console.log)
-	.catch onReject
+.then(undefined, function(error) {
+  console.log(error.message)
+})
+.catch(function(error) {
+  console.log(error.message)
+})
